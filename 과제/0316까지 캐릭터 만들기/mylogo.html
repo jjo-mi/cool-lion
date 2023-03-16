@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>my character</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        background: #c2e98f;
+      }
+
+      .jjomi {
+        position: relative;
+        margin: 50px auto;
+        width: 400px;
+        height: 400px;
+      }
+
+      .jjomi .ear {
+        position: absolute;
+        top: 0;
+        width: 100px;
+        height: 260px;
+        background-color: #eea5c7;
+        border-radius: 50px;
+      }
+
+      .jjomi .ear.left {
+        left: 60px;
+      }
+
+      .jjomi .ear.right {
+        right: 82px;
+      }
+
+      .face {
+        position: absolute;
+        bottom: 0;
+        width: 370px;
+        height: 320px;
+        border-radius: 500px 500px 430px 430px;
+        background: rgb(255, 255, 255);
+        border-color: #eea5c7;
+        border-style: solid;
+        border-top-width: 45px;
+      }
+
+      .jjomi .eyebrow {
+        position: absolute;
+        top: 100px;
+        width: 78px;
+        height: 14px;
+        border-radius: 14px;
+        background: #000;
+        transition: all 0.2s;
+      }
+
+      .jjomi .eyebrow.left {
+        left: 68px;
+      }
+      .jjomi .eyebrow.right {
+        right: 68px;
+      }
+      .eye {
+        position: absolute;
+        top: 147px;
+        width: 26px;
+        height: 26px;
+        border-radius: 100%;
+        transition: all 0.2s;
+        background: #000;
+        z-index: 2;
+      }
+
+      .jjomi .eye.left {
+        left: 90px;
+      }
+      .jjomi .eye.right {
+        right: 94px;
+      }
+
+      .mouth {
+        position: absolute;
+        top: 194px;
+        left: 50%;
+        margin-left: -40px;
+        width: 150px;
+        height: 30px;
+        border-radius: 80% 80% 100% 100%;
+        background: #f7f45e;
+        border: 7px solid #f1e532;
+        z-index: 2;
+      }
+      /* 
+      .mouth.up {
+        right: 255px;
+      }
+      .mouth.down {
+        right: 255px;
+      } */
+
+      .jjomi .cheek {
+        position: absolute;
+        width: 100px;
+        height: 60px;
+        background-color: #ffd9d9;
+        border-radius: 50%;
+        box-shadow: #eea5c7 0px 3px 9px 0px;
+        top: 300px;
+        z-index: 1;
+      }
+
+      .jjomi .cheek.left {
+        left: 230px;
+      }
+
+      .jjomi .cheek.right {
+        right: 255px;
+      }
+
+      .cheek-left {
+        top: 129px;
+        left: -23px;
+      }
+    </style>
+    <!-- CSS -->
+    <link rel="stylesheet" href="" />
+  </head>
+  <body>
+    <div class="jjomi">
+      <div class="ear left"></div>
+      <div class="ear right"></div>
+
+      <!-- face -->
+      <div class="face">
+        <!-- eyes -->
+        <div class="eyebrow left"></div>
+        <div class="eyebrow right"></div>
+        <div class="eye left"></div>
+        <div class="eye right"></div>
+        <!-- mouth -->
+        <div class="mouth up"></div>
+        <div class="mouth down"></div>
+      </div>
+      <!-- cheek -->
+      <div class="cheek left"></div>
+      <div class="cheek right"></div>
+    </div>
+
+    <!-- hat -->
+    <div class="hat"></div>
+    <!-- JavaScript -->
+    <script src=""></script>
+  </body>
+</html>
