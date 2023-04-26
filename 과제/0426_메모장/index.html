@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹 메모장</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <h1>나만의 메모장</h1>
+    </header>
+    <main>
+        <section class="wrapper">
+            <input type="text" id="title">
+            <textarea name="" id="content" cols="30" rows="10"></textarea>
+            <!-- <button onclick="saveMemo()">메모장에 저장</button> -->
+            <button class="custom-btn btn-8" onclick="saveMemo()"><span>메모장에 저장</span></button>
+        </section>
+        <section id="display"></section>
+    </main>
+  <!-- JavaScript -->
+  <script>
+    let allMemo = JSON.parse(localStorage.getItem("allMemo"));
+    console.log(allMemo)
+    allMemo = allMemo ?? [];
+    updateMemo();
+
+    function saveMemo() {
+        const title = document.getElementById('title').value;
+        const content = document.getElementById('content').value;
+
+        allMemo.push({title, content, len: allMemo.length});
+        localStorage.setItem("allMemo", JSON.stringify(allMemo));
+
+        updateMemo();
+    }
+
+    function updateMemo() {
+        const display = document.getElementById('display');
+        display.innerHTML = "";
+
+        for(const item of allMemo) {
+            const wirteTitle = document.createElement("h2");
+            const wirteContent = document.createElement("p");
+            const wirteId = document.createElement("p");
+            const deleteMemoBtn = document.createElement("button");
+
+            wirteTitle.textContent = item.title;
+            wirteContent.textContent = item.content;
+            wirteId.textContent = item.len + 1;
+            deleteMemoBtn.textContent = '삭제';
+            deleteMemoBtn.setAttribute("id", item.len);
+            deleteMemoBtn.setAttribute("onclick", "remove()");
+
+            display.appendChild(wirteId);
+            display.appendChild(wirteTitle);
+            display.appendChild(wirteContent);
+            display.appendChild(deleteMemoBtn);
+        }
+    }
+
+    function remove() {
+        const idx = allMemo.find(
+                    (item) => item.len == event.target.id
+                );
+                if (idx) {
+                    allMemo.splice(
+                        allMemo.findIndex((item) => item.len == idx.len),
+                        1
+                    );
+                }
+                localStorage.setItem("allMemo", JSON.stringify(allMemo));
+        updateMemo();
+    }
+
+  </script>
+
+</body>
+</html>
