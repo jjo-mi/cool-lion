@@ -1,0 +1,58 @@
+body {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  background: radial-gradient(
+    96.74% 276.79% at 3.59% 5.28%,
+    #f0f4ff 0%,
+    #a5b6ee 100%
+  );
+}
+
+head img {
+  position: absolute;
+
+  width: 400px;
+}
+
+article {
+  width: 400px;
+  height: 360px;
+  background: linear-gradient(144.07deg, #5572bb 2.13%, #374b7c 102.97%);
+  box-shadow: 20px 20px 60px 10px rgba(55, 75, 124, 0.4);
+  border-radius: 16px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.timer .title {
+  margin: 30px 30px;
+  border-bottom: 2px solid #3d538a;
+  text-align: center;
+}
+
+.timer .title h2 {
+  color: white;
+}
+
+.timer .time {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 20px;
+  margin-top: 50px;
+}
+
+.timer .btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  gap: 20px;
+}
+
+.timer .time img + img {
+  color: azure;
+}
